@@ -1,0 +1,15 @@
+.sidebar {
+    min-width: 260px;
+    max-width: 260px;
+    direction: ltr;
+    background: #293042;
+    height: 100%;
+    position: relative;
+    transition: margin-left .35s ease-in-out,left .35s ease-in-out,margin-right .35s ease-in-out,right .35s ease-in-out;
+}
+
+.collapsed {
+    margin-left: -260px;
+}
+
+
