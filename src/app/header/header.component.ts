@@ -5,32 +5,29 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
 export class HeaderComponent implements OnInit {
 
   @Output() SideBarStatus = new EventEmitter<boolean>();
+  isOpen = true;
   constructor() { }
 
   ngOnInit(): void {
-    this.checkScren()
+    this.checkScren();
   }
 
-  isOpen = true;
-
-  toggleSidebar() {
+  toggleSidebar(): void {
     this.isOpen = !this.isOpen;
     this.SideBarStatus.emit(this.isOpen);
-
-    
-    this.checkScren()
+    this.checkScren();
   }
 
+  checkScren(): void {
 
-
-  checkScren(){
-    if(window.innerWidth <= 500){
-      let brand = document.querySelector('#navbar-brand');
-      let toggler = document.querySelector('#navbar-toggler');
-      if(this.isOpen){
+    if (window.innerWidth <= 500) {
+      const brand = document.querySelector('#navbar-brand');
+      const toggler = document.querySelector('#navbar-toggler');
+      if (this.isOpen) {
         brand.classList.add('hide');
         toggler.classList.add('hide');
       } else {
@@ -39,5 +36,4 @@ export class HeaderComponent implements OnInit {
       }
     }
   }
-
 }

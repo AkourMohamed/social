@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-   
-  isOpen: boolean = true;
-  toggleSidebar(value) {
+
+  isOpen = true;
+  toggleSidebar(value): void {
     this.isOpen = value;
   }
 }
